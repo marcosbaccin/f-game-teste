@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import RoomSelection from './components/RoomSelection';
+import Game from './components/Game';
 
 function App() {
+  const [roomId, setRoomId] = useState(null);
+  const [playerId, setPlayerId] = useState(null);
+
+  // Se o jogador já entrou em uma sala, mostramos o jogo; caso contrário, mostramos a tela de seleção de sala.
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {roomId && playerId ? (
+        <Game roomId={roomId} playerId={playerId} />
+      ) : (
+        <RoomSelection setRoomId={setRoomId} setPlayerId={setPlayerId} />
+      )}
     </div>
   );
 }
