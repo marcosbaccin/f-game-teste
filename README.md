@@ -1,4 +1,4 @@
-# GetACapy
+# Fodinha
 
 Este é um projeto de um jogo de cartas chamado Fodinha, no qual utilizamos Node.js para o backend e React para o frontend. Neste projeto, recriamos um jogo comumente jogado pessoalmente com cartas físicas em um jogo online. 
 
